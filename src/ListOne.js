@@ -1,7 +1,7 @@
 import React from 'react';
 import Fruit from './ItemOne';
 
-export default function fruitList({
+export default function FruitList({
   fruits = [],
 }) {
   return (

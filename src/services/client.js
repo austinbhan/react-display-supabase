@@ -10,3 +10,11 @@ export function checkError({ data, error }) {
   }
   return data;
 }
+
+export async function getFruits() {
+  const response = await client
+    .from('Fruits')
+    .select('*');
+
+  return response.body;
+}
