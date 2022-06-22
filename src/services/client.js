@@ -22,5 +22,11 @@ export async function getFruits() {
 export async function getGrains() {
   const response = await client.from('Grains').select('*');
 
-  return response.body
+  return response.body;
+}
+
+export async function getVegetables() {
+  const response = await client.from('Vegetables').select('*');
+
+  return response.body;
 }
