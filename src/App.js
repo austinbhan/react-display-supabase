@@ -4,14 +4,16 @@ import { useEffect, useState } from 'react';
 
 import FruitList from './ListOne';
 import GrainList from './ListTwo';
+import VegetableList from './ListThree';
 
 // import your arrays here'
-import { getFruits, getGrains } from './services/client';
+import { getFruits, getGrains, getVegetables } from './services/client';
 
 function App() {
 
   const [fruits, setFruits] = useState([]);
   const [grains, setGrains] = useState([]);
+  const [vegetables, setVegetables] = useState([]);
 
   async function fetchFruitsData() {
     const data = await getFruits();
@@ -21,12 +23,19 @@ function App() {
     const data = await getGrains();
     setGrains(data);
   }
+  async function fetchVegetablesData() {
+    const data = await getVegetables();
+    setVegetables(data);
+  }
 
   useEffect(() => {
     fetchFruitsData();
   }, []);
   useEffect(() => {
     fetchGrainsData();
+  }, []);
+  useEffect(() => {
+    fetchVegetablesData();
   }, []);
 
   return (
@@ -36,6 +45,7 @@ function App() {
           <>
             <FruitList fruits={fruits} />
             <GrainList grains={grains} />
+            <VegetableList vegetables={vegetables} />
           </>
         }
       </div>
