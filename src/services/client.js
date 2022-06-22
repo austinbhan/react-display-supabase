@@ -30,3 +30,9 @@ export async function getVegetables() {
 
   return response.body;
 }
+
+export async function getCatchPhrases() {
+  const response = await client.from('Catchphrases').select('*');
+
+  return response.body;
+}
