@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.grain-list {
+  background-color: lightgreen;
+}
+
+.vegetable-list {
+  background-color: lightblue;
+}
+
+.fruit-list {
+  background-color: lightcoral;
+}
+
+.catchphrase-list {
+  background-color: lightsalmon;
+}

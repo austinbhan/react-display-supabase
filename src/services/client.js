@@ -10,3 +10,29 @@ export function checkError({ data, error }) {
   }
   return data;
 }
+
+export async function getFruits() {
+  const response = await client
+    .from('Fruits')
+    .select('*');
+
+  return response.body;
+}
+
+export async function getGrains() {
+  const response = await client.from('Grains').select('*');
+
+  return response.body;
+}
+
+export async function getVegetables() {
+  const response = await client.from('Vegetables').select('*');
+
+  return response.body;
+}
+
+export async function getCatchPhrases() {
+  const response = await client.from('Catchphrases').select('*');
+
+  return response.body;
+}
