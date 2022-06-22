@@ -10,11 +10,12 @@ import { getFruits } from './services/client';
 function App() {
 
   const [fruits, setFruits] = useState([]);
+
   async function fetchFruitsData() {
     const data = await getFruits();
     setFruits(data);
   }
-
+  
   useEffect(() => {
     fetchFruitsData();
   }, []);
