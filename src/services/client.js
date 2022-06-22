@@ -18,3 +18,9 @@ export async function getFruits() {
 
   return response.body;
 }
+
+export async function getGrains() {
+  const response = await client.from('Grains').select('*');
+
+  return response.body
+}
